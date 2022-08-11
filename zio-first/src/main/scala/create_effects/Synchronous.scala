@@ -11,6 +11,7 @@ object Synchronous extends ZIOAppDefault {
 
   val readLine2: ZIO[Any, Throwable, String] = ZIO.attempt(StdIn.readLine())
   def printLine2(line: String): UIO[Unit] = ZIO.succeed(println(line))
+  
   val readLine3: ZIO[Any, IOException, String] =
     ZIO.attempt(StdIn.readLine()).refineToOrDie[IOException]
 
