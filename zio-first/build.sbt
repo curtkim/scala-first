@@ -6,6 +6,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "zio-first",
     libraryDependencies ++= Seq(
-      "dev.zio" %% "zio" % "2.0.0"
+      "dev.zio" %% "zio" % "2.0.0",
+      "dev.zio" %% "zio-streams" % "2.0.0",
     ),
   )
