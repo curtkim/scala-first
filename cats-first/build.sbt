@@ -23,7 +23,7 @@ lazy val root = (project in file("."))
       "io.circe" %% "circe-core" % circeVersion,
       "io.circe" %% "circe-generic" % circeVersion,
       "io.circe" %% "circe-parser" % circeVersion,
-
-      "org.scalacheck" %% "scalacheck" % "1.15.4" % "test"
+      "org.scalacheck" %% "scalacheck" % "1.15.4" % "test",
+      "org.scalatest" %% "scalatest" % "3.2.13" % "test"
     )
   )

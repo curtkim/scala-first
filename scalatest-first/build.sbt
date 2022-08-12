@@ -4,9 +4,9 @@ ThisBuild / scalaVersion := "3.1.3"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "zio-first",
+    name := "scalatest-first",
+
     libraryDependencies ++= Seq(
-      "dev.zio" %% "zio" % "2.0.0",
-      "dev.zio" %% "zio-streams" % "2.0.0",
-    ),
-  )
+        "org.scalatest" %% "scalatest" % "3.2.13" % "test"
+    )
+)
