@@ -1,13 +1,13 @@
 package rpn
 
-import cats.data.*
+import cats.data.State
 import cats.implicits.*
 
 /**
  * This solution works, but handles errors poorly.
  */
 
-object Attempt1:
+object Attempt1 {
   type Stack = List[Int]
 
   type Eff[A] = State[Stack, A]
@@ -43,8 +43,7 @@ object Attempt1:
 
   def run = evalRPNExpression(getExprElements("1 2 + 3 *"))
 
-  /*
-  @main def attempt1_run(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     println(run)
   }
-  */
+}
