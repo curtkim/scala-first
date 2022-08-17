@@ -1,0 +1,1 @@
+https://medium.com/@PerrottaFrancisco/type-class-with-scala-cats-897bef0ca1ce
