@@ -1,10 +1,10 @@
-val f = (x: Int, y: Int) => (x+1, y+2)
-val g = (x: Int, y: Int) => x-y
+val f1 = (x: Int, y: Int) => (x+1, y+2)
+val g1 = (x: Int, y: Int) => x-y
 
-val h = f.tupled andThen g.tupled
-val h2 = g.tupled compose f.tupled
+val h8 = f1.tupled andThen g1.tupled
+val h9 = g1.tupled compose f1.tupled
 
 @main def binary_andThen_main(): Unit = {
-  assert(h((5,4)) == 0)
-  assert(h2((5,4)) == 0)
+  assert(h8((5,4)) == 0)
+  assert(h9((5,4)) == 0)
 }
