@@ -1,9 +1,9 @@
 package tio.example
 
-import tio.{Console, TIOApp}
+import tio.{TIO, Console, TIOApp}
 
 object SequenceEffects extends TIOApp {
-  def run = {
+  def run: TIO[Unit] = {
     for {
       _ <- Console.putStrLn("first")
       _ <- Console.putStrLn("second")
