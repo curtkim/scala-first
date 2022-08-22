@@ -42,11 +42,13 @@ case object NoInt extends MaybeInt {
   val d: MaybeInt = for {
     a <- maybe
     b <- maybe
-  } yield a+b
+    c <- maybe
+  } yield a+b+c
   println(d)
 
   val m1 = SomeInt(1)
-  val m2 = SomeInt(2)
-  val m3 = m1.flatMap(a => m2.map(b => a+b))
-  println(m3)
+  val m2 = SomeInt(1)
+  val m3 = SomeInt(1)
+  val m4 = m1.flatMap(a => m2.flatMap(b => m3.map(c => a+b+c)))
+  println(m4)
 }
