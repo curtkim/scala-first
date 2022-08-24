@@ -1,6 +1,7 @@
 package intro.fibers
 
 import cats.effect.IO
+import cats.effect.FiberIO
 import cats.effect.kernel.Outcome
 
 import munit.CatsEffectSuite
@@ -15,7 +16,7 @@ class FibersUnitTest extends CatsEffectSuite{
   test("Fiber should be canceled") {
     val io: IO[String] = IO("Starting a task").debug >> IO.sleep(400.millis) >> IO("Task completed").debug
     val fibCancel = for {
-      fib <- io.start
+      fib: FiberIO[String] <- io.start
       _ <- IO.sleep(100.millis) >> fib.cancel >> IO("Fiber cancelled").debug
       res <- fib.join
     } yield res

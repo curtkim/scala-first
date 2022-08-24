@@ -15,6 +15,7 @@ import Utils.ShowThread
 
 object ParallelApp extends IOApp {
   val tasks: List[IO[Int]] = (1 to 10).map(IO.pure).map(_.showThread).toList
+
   val incremented: IO[List[Int]] = tasks.parTraverse {
     ioi => for (i <- ioi) yield i + 1
   }
